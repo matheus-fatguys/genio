@@ -110,7 +110,6 @@ export class Genio extends ControladorAbstratoJogo{
             if(acertos>=sequenciaGerada.length)
                 this.venceu()
         })
-        // , ()=>this.venceu());
 
         errosStream.subscribe(par=>{
             let entrada=par[0];

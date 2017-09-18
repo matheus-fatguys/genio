@@ -1,0 +1,23 @@
+{
+    
+    "file": [
+        "./src/main.ts"
+    ],
+    "compileOnSave": false,
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "declarationDir": "./modulo/types" ,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+        "dom",
+        "es2015"
+        ],
+        "module": "amd",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "target": "es5",
+        "outDir": "./modulo"
+    }
+   }
