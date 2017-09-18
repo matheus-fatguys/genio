@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>
+            Gênio Typescript
+        </title>
+        <link href="estilo.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="cena">
+            <div id="controles">
+                <div>
+                    <label for="tamanhoSequencia" class="configuracao rotulo">Dificuldade:</label>
+                    <input type="number" id="dificuldade" class="configuracao numero" value="4" />
+                </div>
+                <div>
+                    <input type="button" id="botaoIniciar" class="botao-controle" value="Iniciar" />
+                    <input type="button" id="botaoPausar" class="botao-controle escondido" value="Pausar"  />
+                    <input type="button" id="botaoContinuar" class="botao-controle escondido" value="Continuar" />
+                    <input type="button" id="botaoEncerrar" class="botao-controle escondido" value="Encerrar"  />
+                </div>
+            </div>
+            <div>
+                <div id="botoes" class="botoes-genio">
+                    <div id="botao7" class="botao-genio 7" >7</div>
+                    <div id="botao8" class="botao-genio 8" >8</div>
+                    <div id="botao9" class="botao-genio 9" >9</div>
+                    <div id="botao4" class="botao-genio 4" >4</div>
+                    <div id="botao5" class="botao-genio 5" >5</div>
+                    <div id="botao6" class="botao-genio 6" >6</div>
+                    <div id="botao1" class="botao-genio 1" >1</div>
+                    <div id="botao2" class="botao-genio 2" >2</div>
+                    <div id="botao3" class="botao-genio 3" >3</div>
+                    <div id="botao_asterisco" class="botao-genio asterisco" >*</div>
+                    <div id="botao0" class="botao-genio 0" >0</div>
+                    <div id="botao_lasanha" class="botao-genio lasanha" >#</div>
+                </div>
+                <div id="painelInfo" class="escondido">
+                    <div>                
+                        <label for="tempo" >Tempo:</label>
+                        <input type="number"  id="tempo"  value="" />
+                    </div>
+                    <div>                
+                        <label for="placar" >Placar:</label>
+                        <input type="number"  id="placar"  value="" />
+                    </div>
+                    <div>          
+                        <label for="estado" >Estado:</label>
+                        <input type="text"  id="estado"  value="" />      
+                    </div>
+                    <div id="painelResultado">          
+                        <label for="resultado" >Resultado:</label>
+                        <input type="text"  id="resultado"  value="" />      
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <script src="polyfill.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+body {
+  margin: 40px;
+}
+.botao-controle {
+  background-color: #440;
+  color: #fff;
+  width: 320px;
+  display: block;
+}
+.botoes-genio{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #000;
+}
+.botao-genio {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  text-align: center
+}
+.aceso{
+    color: #fff;
+    background-color: #262;
+}
+.errado{
+    color: #fff;
+    background-color: #a12;
+}
+.configuracao{
+    color: #444;
+    background-color: #aaa;
+}
+.numero{
+    width:60px
+}
+.rotulo{
+    width:200px
+}
+.escondido{
+    display: none
+}
