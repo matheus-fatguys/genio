@@ -24,6 +24,8 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/skipUntil';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/operator/scan';
 
 
 export class Genio extends ControladorAbstratoJogo{
@@ -63,8 +65,8 @@ export class Genio extends ControladorAbstratoJogo{
     }
 
     private iniciarDesafio(){
-        
-        this.sequenciaGeradaStream=Observable.from(this.gerarNumerosAleatorios())
+        let sequenciaGerada=this.gerarNumerosAleatorios();
+        this.sequenciaGeradaStream=Observable.from(sequenciaGerada)
         .map((numero)=>ComandoMostrarBotaoGenio.botao(numero))
         .share();
 
@@ -95,9 +97,20 @@ export class Genio extends ControladorAbstratoJogo{
             _=>this.acenderNumero(-1, false), error=>console.error(error)
         );
         
-        acertosStream.subscribe(par=>this.processarUsuarioAcertou(par[0])
-        , error=>console.error(error)
-        , ()=>this.venceu());
+        let venceuObs = acertosStream
+        .mapTo(1)
+        .scan((acumulado, atual) =>++acumulado,0);
+
+        acertosStream
+        .subscribe(par=>this.processarUsuarioAcertou(par[0])
+        , error=>console.error(error))
+        
+        venceuObs
+        .subscribe(acertos=>{
+            if(acertos>=sequenciaGerada.length)
+                this.venceu()
+        })
+        // , ()=>this.venceu());
 
         errosStream.subscribe(par=>{
             let entrada=par[0];
